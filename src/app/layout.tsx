@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Alata } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner"
+import Header from "@/components/header";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const alata = Alata({
+  variable: "--font-alata",
   subsets: ["vietnamese"],
-  weight: ["400", "500", "700"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -21,9 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} antialiased`}
+        className={`${alata.variable} antialiased`}
       >
-        {children}
+        <Toaster />
+        <div className="overflow-hidden">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
