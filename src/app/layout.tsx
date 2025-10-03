@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${alata.variable} antialiased`}
+        className={`${alata.variable} antialiased bg-[#1e282d]`}
       >
         <Toaster />
         <div className="">

@@ -11,12 +11,6 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { motion, AnimatePresence } from "framer-motion";
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -37,7 +31,7 @@ export default function Header() {
     };
 
     return (
-        <div className='bg-[#000000] text-[#ffffff] w-full sticky top-0'>
+        <div className='bg-[#000000] text-[#ffffff] w-full sticky top-0 z-9999'>
             <div className='w-full flex justify-center'>
                 <div className='px-1 flex items-center h-[66px] lg:justify-center justify-between w-full'>
                     <figure className="Logo">
