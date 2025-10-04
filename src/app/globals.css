@@ -239,3 +239,46 @@ body {
 #sidebar .sub-menu a {
   padding-left: 2em;
 }
+
+.widg::before {
+  left: 0;
+  height: 2px;
+  width: 100%;
+  opacity: .2;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  background-color: rgb(105, 105, 105);
+}
+
+.widg::after {
+  height: 3px;
+  width: 30px;
+  background-color: #b5e745;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+}
+
+
+.list-anime::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 5px;
+  background-color: red;
+  /* border: 1px solid rebeccapurple; */
+  transform: translateX(-5px);
+  transition: all ease 0.3s;
+  opacity: 0;
+}
+
+/* Khi hover cha chứa .wrap-list-anime thì .list-anime::after animation */
+.list-anime:hover::after {
+  opacity: 100;
+  transform: translateX(0px);
+}
