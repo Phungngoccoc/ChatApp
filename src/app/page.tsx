@@ -23,14 +23,15 @@ import Camera from "@/components/icon/camera";
 import Movie from "@/components/icon/movie";
 import { Button } from "@/components/ui/button";
 import Dots from "@/components/icon/dot";
+import Arrow from "@/components/icon/arrow";
 export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
   return (
-    <div className="flex justify-center p-5">
+    <div className="flex justify-center h-fit pt-4 px-1">
       <div className="container lg:!px-0 xl:!px-25 2xl:!px-50">
-        <div className="container bg-[#0c1012] min-h-[100vh] px-4">
+        <div className="container bg-[#0c1012] py-2 px-4">
           <Carousel
             opts={{
               align: "start",
@@ -75,8 +76,8 @@ export default function Home() {
             </CarouselNext>
           </Carousel>
 
-          <div className="grid grid-cols-10 gap-4 h-[500px] pt-4">
-            <div className="col-span-7">
+          <div className="grid grid-cols-10 gap-4 pt-4">
+            <div className="col-span-10 lg:col-span-7">
               <Carousel
                 opts={{
                   align: "start",
@@ -94,7 +95,7 @@ export default function Home() {
                     >
                       <div className="relative z-0 group">
                         <Image src={banner} alt="a" width={10000} height={300} className="rounded-[3px]" />
-                        <div className="absolute left-0 top-0 w-[66%] h-full bg-black/50 ps-10 pt-6 text-white">
+                        <div className="lg:absolute left-0 top-0 lg:w-[66%] w-full lg:h-full pb-4 lg:bg-black/50 bg-[#131719] ps-10 pt-6 text-white">
                           <Link href={`#`} className="font-light text-[30px] mb-2">
                             Thanh Kiếm Của Thợ Săn Quỷ
                           </Link>
@@ -155,8 +156,122 @@ export default function Home() {
                   ))}
                 </CarouselContent>
               </Carousel>
+              <div className="mt-4">
+                <div className="flex text-white items-center justify-between pe-5 text-[14px]">
+                  <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">MỚI CẬP NHẬT <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
+                  <Link href={`#`} className="text-[#f44336]">Tất cả</Link>
+                  <Link href={`#`}>Mùa thu - 2025</Link>
+                  <Link href={`#`}>Anime bộ</Link>
+                  <Link href={`#`}>Anime lẻ</Link>
+                  <Link href={`#`}>HH Trung Quốc</Link>
+                </div>
+                <div className="grid grid-cols-5 gap-4 mt-4 ">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <div className="group" key={index}>
+                      <Link href="#" className="relative z-0 group col-span-1" >
+                        <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+
+                        <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
+                          <StarIcon size={11} color="#f5ed4a" />
+                          <span className="text-[#f5ed4a] text-[11px]">9.6</span>
+                        </div>
+
+                        <div className="flex flex-col items-center absolute z-10 top-0 right-0 me-1 mt-3 bg-[#8e1a1e] gap-0 rounded-full w-[40px] h-[40px] justify-center me-3">
+                          <span className="text-white text-[10px] mt-[5px]">TẬP</span>
+                          <span className="text-white text-[12px] mb-[5px]">1177</span>
+                        </div>
+                        <div className="flex items-center justify-center absolute inset-0  bg-gradient-to-t from-black/60 to-transparent group-hover:bg-black/10 transition-all opacity-100 duration-300  group-hover:rounded-[1px] z-1">
+                          <div className="w-[50px] h-[50px] rounded-full bg-black/50 border border-[2px] border-black flex items-center justify-center scale-0 group-hover:scale-100 transition-all duration-300">
+                            <PlayIcon size={14} color="white" className="" />
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="mt-3">
+                        <p className="overflow-hidden text-center whitespace-nowrap text-ellipsis text-[14px] opacity-100 text-white group-hover:opacity-70">One Piece - Đảo Hải Tặc</p>
+                        <p className="text-[12px] opacity-70 text-center">Lượt xem: 1,111,111</p>
+                      </div>
+                    </div>
+                  ))}
+                  <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="flex text-white items-center justify-between pe-5 text-[14px]">
+                  <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">SẮP CHIẾU <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
+                </div>
+                <div className="grid grid-cols-5 gap-4 mt-4 ">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <div className="group" key={index}>
+                      <Link href="#" className="relative z-0 group col-span-1">
+                        <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+
+                        <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
+                          <StarIcon size={11} color="#f5ed4a" />
+                          <span className="text-[#f5ed4a] text-[11px]">9.6</span>
+                        </div>
+
+                        <div className="flex flex-col items-center absolute z-10 top-0 right-0 me-1 mt-3 bg-[#8e1a1e] gap-0 rounded-full w-[40px] h-[40px] justify-center me-3">
+                          <span className="text-white text-[10px] mt-[5px]">TẬP</span>
+                          <span className="text-white text-[12px] mb-[5px]">1177</span>
+                        </div>
+                        <div className="absolute bottom-0 left-0 py-2 bg-[#811334] w-full text-center z-3">
+                          SẮP CHIẾU
+                        </div>
+                        <div className="flex items-center justify-center absolute inset-0  bg-gradient-to-t from-black/60 to-transparent group-hover:bg-black/10 transition-all opacity-100 duration-300  group-hover:rounded-[1px] z-1">
+                          <div className="w-[50px] h-[50px] rounded-full bg-black/50 border border-[2px] border-black flex items-center justify-center scale-0 group-hover:scale-100 transition-all duration-300">
+                            <PlayIcon size={14} color="white" className="" />
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="mt-3">
+                        <p className="overflow-hidden text-center whitespace-nowrap text-ellipsis text-[14px] opacity-100 text-white group-hover:opacity-70">One Piece - Đảo Hải Tặc</p>
+                        <p className="text-[12px] opacity-70 text-center">Lượt xem: 1,111,111</p>
+                      </div>
+                    </div>
+                  ))}
+                  <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="flex text-white items-center gap-x-5 pe-5 text-[14px]">
+                  <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">ĐỀ CỬ <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
+                  <Link href={`#`} className="text-[#f44336]">Xem nhiều hôm nay</Link>
+                  <Link href={`#`}>Xem nhiều trong mùa</Link>
+                  <Link href={`#`}>Yêu thích</Link>
+                  <Link href={`#`}>Tháng</Link>
+                </div>
+                <div className="grid grid-cols-5 gap-4 mt-4 ">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <div className="group" key={index}>
+                      <Link href="#" className="relative z-0 group col-span-1" >
+                        <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+
+                        <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
+                          <StarIcon size={11} color="#f5ed4a" />
+                          <span className="text-[#f5ed4a] text-[11px]">9.6</span>
+                        </div>
+
+                        <div className="flex flex-col items-center absolute z-10 top-0 right-0 me-1 mt-3 bg-[#8e1a1e] gap-0 rounded-full w-[40px] h-[40px] justify-center me-3">
+                          <span className="text-white text-[10px] mt-[5px]">TẬP</span>
+                          <span className="text-white text-[12px] mb-[5px]">1177</span>
+                        </div>
+                        <div className="flex items-center justify-center absolute inset-0  bg-gradient-to-t from-black/60 to-transparent group-hover:bg-black/10 transition-all opacity-100 duration-300  group-hover:rounded-[1px] z-1">
+                          <div className="w-[50px] h-[50px] rounded-full bg-black/50 border border-[2px] border-black flex items-center justify-center scale-0 group-hover:scale-100 transition-all duration-300">
+                            <PlayIcon size={14} color="white" className="" />
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="mt-3">
+                        <p className="overflow-hidden text-center whitespace-nowrap text-ellipsis text-[14px] opacity-100 text-white group-hover:opacity-70">One Piece - Đảo Hải Tặc</p>
+                        <p className="text-[12px] opacity-70 text-center">Lượt xem: 1,111,111</p>
+                      </div>
+                    </div>
+                  ))}
+                  <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+                </div>
+              </div>
             </div>
-            <div className="col-span-3">
+            <div className="lg:col-span-3 col-span-10">
               <div className="widget bg-[#131719] p-[10px]">
                 <div className="widg relative pe-4 mb-5">
                   Hôm nay xem gì
@@ -170,27 +285,74 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 flex items-center justify-center">
                 <Image src={widge_gif} width={300} height={300} alt="gif" />
               </div>
-
               <div className="mt-4 bg-[#131719] p-[10px]">
                 <div className="widg relative pe-4 mb-5 text-[13px]">
                   ANIME MỚI CẬP NHẬT
                 </div>
                 <div>
                   <ul className="">
-                    <li className="text-[13px]">
-                      <Link href={`#`} className="flex items-center justify-between border-b border-[#312d28] py-2 group relative list-anime">
-                        <span className="overflow-hidden whitespace-nowrap text-ellipsis text-[#cd8e8e] group-hover:text-white group-hover:translate-x-[10px] transition-all duration-300 relative">Nohara Hiroshi: Hiru Meshi no Ryuugi</span>
-                        <span className="italic !text-[rgb(95_95_95)]">Tập 01</span>
-                      </Link>
-                    </li>
+                    {Array.from({ length: 12 }).map((_, index) => (
+                      <li className="text-[13px]" key={index}>
+                        <Link href={`#`} className="flex items-center justify-between border-b border-[#312d28] py-2 group relative list-anime">
+                          <span className="overflow-hidden whitespace-nowrap text-ellipsis text-[#cd8e8e] group-hover:text-white group-hover:translate-x-[10px] transition-all duration-300 relative">Nohara Hiroshi: Hiru Meshi no Ryuugi</span>
+                          <span className="italic !text-[rgb(95_95_95)]">Tập 01</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4 bg-[#131719] p-[10px]">
+                <div className="widg relative pe-4 mb-5 text-[14px] flex items-center justify-between py-4">
+                  <span>HOT TUẦN</span>
+                  <Link href={`#`} className="text-[#F44336]">TV/Series</Link>
+                  <Link href={`#`} className="opacity-60">Movie/OVA</Link>
+                </div>
+                <div>
+                  <ul className="mt-9">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <li className="text-[13px]" key={index}>
+                        <div className="flex mb-4">
+                          <Link href="#" className="relative z-0 group p-2">
+                            <Image src={img} alt="a" width={70} height={200} className="rounded-[3px]" />
+                            <div className="w-[22px] h-[22px] absolute top-0 left-0 bg-[#b5e745] flex items-center justify-center rounded-l-[3px] text-[9px] z-3">
+                              {`#${index + 1}`}
+                            </div>
+                            <div className="m-2 flex items-center justify-center absolute inset-0 to-transparent group-hover:bg-black/30 transition-all opacity-100 duration-300 rounded-b-[8px] group-hover:rounded-[1px] z-1">
+                              <div className="w-[20px] h-[20px] rounded-full bg-black/80 border border-[2px] border-black flex items-center justify-center scale-0 group-hover:scale-100 transition-all duration-300">
+                                <PlayIcon size={14} color="white" className="" />
+                              </div>
+                            </div>
+                          </Link>
+                          <div className="ps-4 pt-2 text-[13px]">
+                            <Link href={`#`}>One Piece - Đảo Hải Tặc</Link>
+                            <div className="flex gap-2 mt-1">
+                              <span className="flex items-center text-[12px] text-[#b2df50] font-light">
+                                <StarIcon size={'12px'} color="#b2df50" className="me-1" /> 1123
+                              </span>
+                              <span className="flex items-center text-[12px] text-white font-light">
+                                <Clock size={16} stroke="white" className="opacity-40 me-1" /> 12/12
+                              </span>
+                              <span className="flex items-center text-[12px] text-white font-light">
+                                <Calendar size={16} className="opacity-40 me-1" fill="white" /> 2025
+                              </span>
+                              <span className="text-[10px] py-1 px-3 rounded-full bg-[#b81a12]">
+                                HD
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

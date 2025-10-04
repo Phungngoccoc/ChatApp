@@ -126,6 +126,7 @@
 body {
   font-family: var(--font-alata);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .thin-scrollbar::-webkit-scrollbar {

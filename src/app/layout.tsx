@@ -3,6 +3,7 @@ import { Alata } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const alata = Alata({
   variable: "--font-alata",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <div className="">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
