@@ -14,10 +14,11 @@ import FileIcon from '@/components/icon/file'
 import Movie from '@/components/icon/movie'
 import Camera from '@/components/icon/camera'
 import ImageIcon from '@/components/icon/image'
+import CameraVideoFill from '@/components/icon/camera-video'
 
 export default function DetailMovie() {
     const [activeTab, setActiveTab] = useState<'info' | 'character' | 'trailer' | 'images'>('info');
-    const baseClass = 'text-[14px] flex items-center pb-3 cursor-pointer';
+    const baseClass = 'text-[14px] flex items-start pb-3 cursor-pointer min-h-[30px] justify-center';
     const activeClass = 'text-[#b9e850] border-b-[4px] border-[#b9e850]';
     return (
         <div className="container bg-[#0c1012] py-2 px-4">
@@ -51,20 +52,33 @@ export default function DetailMovie() {
                             </div>
                         </div>
                         <div className='text-white flex mt-4'>
-                            <div className='z-5 border-t border-white/60 w-full pt-4 ps-2 flex'>
-                                <div className='w-[50px] h-[50px] border-2 border-[#b9e850] z-5 rounded-full text-[12px] text-white flex items-center justify-center font-bold' >
-                                    95%
-                                </div>
-                                <div className='flex flex-col ms-3 justify-center'>
-                                    <div className='flex items-center '>
-                                        {Array.from({ length: 9 }).map((_, index) => (
-                                            <StarIcon key={index} />
-                                        ))}
-                                        <StarEmptyIcon />
+                            <div className='z-5 border-t border-white/60 w-full pt-4 ps-2 flex sm:flex-row flex-col'>
+                                <div className='flex'>
+                                    <div className='w-[50px] h-[50px] border-2 border-[#b9e850] z-5 rounded-full text-[12px] text-white flex items-center justify-center font-bold' >
+                                        95%
                                     </div>
-                                    <div className='text-[10px] mt-1'>(Đánh giá <strong>9.5</strong>/10 từ <strong>2083</strong> thành viên)</div>
+                                    <div className='flex flex-col ms-3 justify-center'>
+                                        <div className='flex items-center '>
+                                            {Array.from({ length: 9 }).map((_, index) => (
+                                                <StarIcon key={index} />
+                                            ))}
+                                            <StarEmptyIcon />
+                                        </div>
+                                        <div className='text-[10px] mt-1'>(Đánh giá <strong>9.5</strong>/10 từ <strong>2083</strong> thành viên)</div>
+                                    </div>
                                 </div>
-                                <div className="flex gap-2 mt-1 ms-6">
+                                <div className="gap-2 mt-1 ms-6 sm:flex  hidden">
+                                    <span className="flex items-center text-[12px] text-white font-light">
+                                        <Clock size={16} stroke="white" className="opacity-40 me-1" /> 12/12
+                                    </span>
+                                    <span className="flex items-center text-[12px] text-white font-light">
+                                        <Calendar size={16} className="opacity-40 me-1" fill="white" /> 2025
+                                    </span>
+                                    <span className="flex items-center text-[12px] text-white font-light">
+                                        <EyeIcon width={16} height={16} fill="#ccc" className='opacity-40 me-1' /> 1,111,111 Lượt xem
+                                    </span>
+                                </div>
+                                <div className="flex gap-2 mt-1 sm:hidden mt-4 ms-1">
                                     <span className="flex items-center text-[12px] text-white font-light">
                                         <Clock size={16} stroke="white" className="opacity-40 me-1" /> 12/12
                                     </span>
@@ -78,45 +92,90 @@ export default function DetailMovie() {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-4 flex items-center gap-x-10">
+                    <div className="mt-4 flex items-start gap-x-10 transition-all duration-200">
                         <div
                             className={`${baseClass} ${activeTab === 'info' ? activeClass : 'text-gray-400'}`}
                             onClick={() => setActiveTab('info')}
                         >
-                            <FileIcon width={24} height={24} fillColor={activeTab === 'info' ? '#b9e850' : '#999'} className="me-2" />
-                            Thông tin phim
+                            <FileIcon width={24} height={24} fillColor={activeTab === 'info' ? '#b9e850' : '#999'} className="" />
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out max-h-[20px] ${activeTab === 'info' ? 'max-w-[100px] scale-100 opacity-100 ms-2' : 'max-w-0 h-0 scale-0 opacity-0'} md:max-w-[100px] md:scale-100 md:opacity-100 md:h-auto md:ms-2`}>
+                                Thông tin phim
+                            </div>
+
                         </div>
 
                         <div
                             className={`${baseClass} ${activeTab === 'character' ? activeClass : 'text-gray-400'}`}
                             onClick={() => setActiveTab('character')}
                         >
-                            <Movie size={20} color={activeTab === 'character' ? '#b9e850' : '#999'} className="me-2" />
-                            Nhân vật
+                            <Movie size={24} color={activeTab === 'character' ? '#b9e850' : '#999'} className="flex justify-center" />
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out max-h-[20px] ${activeTab === 'character' ? 'max-w-[100px]  scale-100 opacity-100 ms-2' : 'max-w-0 h-0 scale-0 opacity-0'} md:max-w-[100px] md:scale-100 md:opacity-100 md:h-auto md:ms-2`}>
+                                Nhân vật
+                            </div>
                         </div>
 
                         <div
                             className={`${baseClass} ${activeTab === 'trailer' ? activeClass : 'text-gray-400'}`}
                             onClick={() => setActiveTab('trailer')}
                         >
-                            <Camera size={30} color={activeTab === 'trailer' ? '#b9e850' : 'white'} className="me-2" />
-                            Trailer
+                            <CameraVideoFill width={24} height={24} fill={activeTab === 'trailer' ? '#b9e850' : '#999'} className="" />
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out max-h-[20px] ${activeTab === 'trailer' ? 'max-w-[100px]  scale-100 opacity-100 ms-2' : 'max-w-0 h-0 scale-0 opacity-0'} md:max-w-[100px] md:scale-100 md:opacity-100 md:h-auto md:ms-2`}>
+                                Trailer
+                            </div>
                         </div>
 
                         <div
                             className={`${baseClass} ${activeTab === 'images' ? activeClass : 'text-gray-400'}`}
                             onClick={() => setActiveTab('images')}
                         >
-                            <ImageIcon width={24} height={24} fillColor={activeTab === 'images' ? '#b9e850' : '#999'} className="me-2" />
-                            Hình ảnh
+                            <ImageIcon width={24} height={24} fillColor={activeTab === 'images' ? '#b9e850' : '#999'} className="" />
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out max-h-[20px] ${activeTab === 'images' ? 'max-w-[100px]  scale-100 opacity-100 ms-2' : 'max-w-0 h-0 scale-0 opacity-0'} md:max-w-[100px] md:scale-100 md:opacity-100 md:h-auto md:ms-2`}>
+                                Hình ảnh
+                            </div>
                         </div>
                     </div>
-                    <div>
-
+                    <div className='min-h-[300px] bg-[#171f22]'>
+                        <div className={`w-full grid grid-cols-2 gap-x-3 text-[12px] p-4 transform ${activeTab === 'info' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
+                            <ul className='col-span-1 !list-disc ms-4'>
+                                <li>
+                                    <div className='flex items-center'>
+                                        <span>Tập mới:</span>
+                                        <Link href={`#`} className='w-[30px] h-[30px] rounded-[3px] bg-[#3b3b3b] flex items-center justify-center text-[14px] ms-2'>11</Link>
+                                        <Link href={`#`} className='w-[30px] h-[30px] rounded-[3px] bg-[#3b3b3b] flex items-center justify-center text-[14px] ms-2'>12</Link>
+                                        <Link href={`#`} className='w-[30px] h-[30px] rounded-[3px] bg-[#3b3b3b] flex items-center justify-center text-[14px] ms-2'>13</Link>
+                                    </div>
+                                </li>
+                                <li className='mt-3 font-bold'>Trạng thái: <span className='opacity-70 font-light'>Full</span></li>
+                                <li className='mt-3 font-bold'>Thể loại: <Link href={`#`} className='text-[#b5e745] font-light'>Fantasy</Link>, <Link href={`#`} className='text-[#b5e745] font-light'>Magic</Link></li>
+                                <li className='mt-3 font-bold'>Đạo diễn: <span className='opacity-70 font-light'>Kanasaki Takaomi</span></li>
+                                <li className='mt-3 font-bold'>Quốc gia: <Link href={`#`} className='text-[#b5e745] font-light'>Nhật Bản</Link></li>
+                                <li className='mt-3 font-bold'>Số người theo dõi: <span className='opacity-70 font-light'>3,607</span></li>
+                            </ul>
+                            <ul className='col-span-1 list-disc ms-4'>
+                                <li className='mt-3 font-bold'>Thời lượng <span className='opacity-70 font-light'>13/13</span></li>
+                                <li className='mt-3 font-bold'>
+                                    <div className='flex items-center'>
+                                        Chất lượng: <span className='opacity-70 font-light py-1 px-3 bg-[#f2473e] rounded-full ms-2'>HD</span>
+                                    </div>
+                                </li>
+                                <li className='mt-3 font-bold'>
+                                    <div className='flex items-center'>
+                                        Rating: <span className='opacity-70 font-light py-1 px-3 bg-[#f2473e] rounded-[3px] ms-2'>PG-13 - Teens 13 tuổi trở lên</span>
+                                    </div>
+                                </li>
+                                <li className='mt-3 font-bold'>Ngôn ngữ <span className='opacity-70 font-light'>Vietsub</span></li>
+                                <li className='mt-3 font-bold'>Studio: <Link href={`#`} className='text-[#b5e745] font-light'>Studio Gokumi</Link></li>
+                                <li className='mt-3 font-bold'>Seasin: <Link href={`#`} className='text-[#b5e745] font-light'>Mùa hạ - 2025</Link></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <RightBar />
             </div>
-        </div>
+        </div >
     )
 }
