@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex justify-center h-fit pt-4 px-1 mb-5">
             <div className="container lg:!px-0 xl:!px-25 2xl:!px-50">
                 <div className="container bg-[#0c1012] py-2 px-4 lg:flex-row flex flex-col items-center justify-between">
-                    <Image src={logo} alt="logo" width={100} height={100} />
+                    <Image src={logo} alt="logo" />
                     <div className='lg:flex-row flex flex-col text-[13px] items-center gap-6 uppercase lg:mt-0 mt-4'>
                         <Link href={`#`} className=''>XEM PHIM</Link>
                         <Link href={`#`}>Donate♥️</Link>

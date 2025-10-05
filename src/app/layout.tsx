@@ -27,11 +27,18 @@ export default function RootLayout({
         className={`${alata.variable} antialiased bg-[#1e282d]`}
       >
         <Toaster />
-        <div className="">
+
+        <div className="flex flex-col min-h-screen">
           <Header />
-          {children}
+          <main className="flex-grow p-0">
+            <div className="flex justify-center h-fit pt-4 px-1">
+              <div className="container lg:!px-0 xl:!px-25 2xl:!px-50">{children}
+              </div>
+            </div>
+          </main>
           <Footer />
         </div>
+
       </body>
     </html>
   );
