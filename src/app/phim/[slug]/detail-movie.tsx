@@ -33,7 +33,7 @@ export default function DetailMovie() {
                     <div className={`bg-[url('/banner.png')] p-5 relative bg-cover relative`}>
                         <div className='absolute bg-black/80 top-0 left-0 w-full h-full z-3'></div>
                         <div className='flex md:flex-row flex-col items-center md:items-start'>
-                            <Link href="/phim/test" className="relative group !min-w-[180px] w-fit h-fit block overflow-hidden rounded-[3px] z-4 md:order-1 order-2">
+                            <Link href="/phim/test/tap-01" className="relative group !min-w-[180px] w-fit h-fit block overflow-hidden rounded-[3px] z-4 md:order-1 order-2">
                                 <Image src={movie_img} alt="a" className="rounded-[3px]" />
                                 <div className="flex items-center justify-center absolute inset-0 group-hover:bg-black/30 transition-all opacity-100 duration-300 z-1">
                                     <div className="w-[50px] h-[50px] rounded-full bg-black/50 border-[2px] border-black flex items-center justify-center scale-100 group-hover:scale-100 transition-all duration-300">
