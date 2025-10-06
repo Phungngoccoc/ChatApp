@@ -2,19 +2,22 @@
 import RightBar from '@/components/right-bar'
 import React, { useState } from 'react'
 import movie_img from "../../../../public/movie_2.jpg"
+import img from "../../../../public/movie.jpg"
 import Link from 'next/link'
 import Image from 'next/image'
 import PlayIcon from '@/components/icon/play'
-import StarIcon from '@/components/icon/star-full'
 import StarEmptyIcon from '@/components/icon/star-empty'
 import Clock from '@/components/icon/clock'
 import Calendar from '@/components/icon/calendar'
 import EyeIcon from '@/components/icon/eye'
 import FileIcon from '@/components/icon/file'
 import Movie from '@/components/icon/movie'
-import Camera from '@/components/icon/camera'
 import ImageIcon from '@/components/icon/image'
 import CameraVideoFill from '@/components/icon/camera-video'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import StarIcon from '@/components/icon/star'
+import StarIcons from '@/components/icon/star-full'
 
 export default function DetailMovie() {
     const [activeTab, setActiveTab] = useState<'info' | 'character' | 'trailer' | 'images'>('info');
@@ -60,7 +63,7 @@ export default function DetailMovie() {
                                     <div className='flex flex-col ms-3 justify-center'>
                                         <div className='flex items-center '>
                                             {Array.from({ length: 9 }).map((_, index) => (
-                                                <StarIcon key={index} />
+                                                <StarIcons key={index} />
                                             ))}
                                             <StarEmptyIcon />
                                         </div>
@@ -138,7 +141,7 @@ export default function DetailMovie() {
                             </div>
                         </div>
                     </div>
-                    <div className='min-h-[300px] bg-[#171f22]'>
+                    <div className='pb-3 bg-[#171f22]'>
                         <div className={`w-full grid grid-cols-2 gap-x-3 text-[12px] p-4 transform ${activeTab === 'info' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
                             <ul className='col-span-1 !list-disc ms-4'>
                                 <li>
@@ -172,6 +175,55 @@ export default function DetailMovie() {
                                 <li className='mt-3 font-bold'>Seasin: <Link href={`#`} className='text-[#b5e745] font-light'>Mùa hạ - 2025</Link></li>
                             </ul>
                         </div>
+                    </div>
+                    <div className="mt-4 bg-[#131719] p-[10px]">
+                        <div className="widg relative pe-4 mb-5 text-[13px] text-white">
+                            Phim liên quan
+                        </div>
+                        <Carousel
+                            opts={{
+                                align: "start",
+                            }}
+                            className="w-full mt-5"
+                        >
+                            <CarouselContent>
+                                {Array.from({ length: 20 }).map((_, index) => (
+                                    <CarouselItem
+                                        key={index}
+                                        className="basis-1/2 [@media(min-width:480px)]:basis-1/3 sm:!basis-1/4 md:!basis-1/5 lg:!basis-1/6 rounded-none  "
+                                    >
+                                        <Link href="/phim/test" className="relative z-0 group">
+                                            <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+
+                                            <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center">
+                                                <StarIcon size={11} color="#f5ed4a" />
+                                                <span className="text-[#f5ed4a] text-[11px]">9.6</span>
+                                            </div>
+
+                                            <div className="flex flex-col items-center absolute z-10 top-0 right-0 me-1 mt-1 bg-[#8e1a1e] gap-0 rounded-full w-[40px] h-[40px] justify-center">
+                                                <span className="text-white text-[10px] mt-[5px]">TẬP</span>
+                                                <span className="text-white text-[12px] mb-[5px]">1177</span>
+                                            </div>
+                                            <div className="absolute bottom-0 w-full text-center text-white font-normal text-[12px] px-2 pb-2 z-2 group-hover:opacity-0 opacity-100 transition-all duration-300">One Piece - Đảo Hải Tặc</div>
+                                            <div className="flex items-center justify-center absolute inset-0  bg-gradient-to-t from-black/60 to-transparent group-hover:bg-black/10 transition-all opacity-100 duration-300 rounded-b-[8px] group-hover:rounded-[1px] z-1">
+                                                <div className="w-[50px] h-[50px] rounded-full bg-black/50 border border-[2px] border-black flex items-center justify-center scale-0 group-hover:scale-100 transition-all duration-300">
+                                                    <PlayIcon size={14} color="white" className="" />
+                                                </div>
+                                            </div>
+                                        </Link>
+
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="absolute cursor-pointer left-[-10px] top-1/2 -translate-y-1/2 bg-[#a10b11] rounded-none text-white w-[25px] h-[30px] flex items-center justify-center shadow-md ring-none focus-non border-none hover:bg-[#a10b11]">
+                                <ChevronLeft className="w-5 h-5 hover:text-white" />
+                            </CarouselPrevious>
+
+                            <CarouselNext className="absolute cursor-pointer right-[-10px] top-1/2 -translate-y-1/2 bg-[#a10b11] rounded-none text-white w-[25px] h-[30px] flex items-center justify-center shadow-md ring-none focus-non border-none hover:bg-[#a10b11]">
+                                <ChevronRight className="w-5 h-5" />
+                            </CarouselNext>
+                        </Carousel>
+
                     </div>
                 </div>
                 <RightBar />

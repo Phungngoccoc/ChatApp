@@ -7,7 +7,7 @@ type IconProps = {
     className?: string;
 };
 
-const StarIcon: React.FC<IconProps> = ({
+const StarIcons: React.FC<IconProps> = ({
     fill = "#ffc107",
     width = 16,
     height = 16,
@@ -30,4 +30,4 @@ const StarIcon: React.FC<IconProps> = ({
     );
 };
 
-export default StarIcon;
+export default StarIcons;
