@@ -62,7 +62,7 @@ export default function RightBar() {
                             <li className="text-[13px]" key={index}>
                                 <div className="flex mb-4">
                                     <Link href="#" className="relative z-0 group p-2">
-                                        <Image src={img} alt="a" width={70} height={200} className="rounded-[3px]" />
+                                        <Image src={img} alt="a" width={70} className="rounded-[3px]" />
                                         <div className="w-[22px] h-[22px] absolute top-0 left-0 bg-[#b5e745] flex items-center justify-center rounded-l-[3px] text-[9px] z-3">
                                             {`#${index + 1}`}
                                         </div>

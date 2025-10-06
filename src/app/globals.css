@@ -168,6 +168,24 @@ body {
   width: 4px;
 }
 
+.bottom-scrollbar {
+  overflow-y: hidden
+}
+
+.bottom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #7d9d14;
+  z-index: 5;
+}
+
+.bottom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.bottom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+
 
 #sidebar::-webkit-scrollbar {
   display: none;
@@ -294,20 +312,3 @@ body {
   opacity: 100;
   transform: translateX(0px);
 }
-/* 
-.list-icon::before {
-  content: '.';
-  display: flex;
-  align-items: center;
-  color: #b5e745;
-  font-size: 20px;
-  border-radius: 100px;
-  line-height: 10px;
-  border: 1px solid red;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 10px;
-  height: 10px;
-  height: fit-content;
-} */

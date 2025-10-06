@@ -1,12 +1,14 @@
 'use client'
 import RightBar from '@/components/right-bar'
-import React, { useState } from 'react'
+import React, { RefObject, useEffect, useRef, useState } from 'react'
 import movie_img from "../../../../public/movie_2.jpg"
 import img from "../../../../public/movie.jpg"
+import banner from "../../../../public/banner.png"
 import Link from 'next/link'
 import Image from 'next/image'
 import PlayIcon from '@/components/icon/play'
 import StarEmptyIcon from '@/components/icon/star-empty'
+import character from "../../../../public/character.png"
 import Clock from '@/components/icon/clock'
 import Calendar from '@/components/icon/calendar'
 import EyeIcon from '@/components/icon/eye'
@@ -18,20 +20,40 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import StarIcon from '@/components/icon/star'
 import StarIcons from '@/components/icon/star-full'
-
+type TabKey = 'info' | 'character' | 'trailer' | 'images';
 export default function DetailMovie() {
-    const [activeTab, setActiveTab] = useState<'info' | 'character' | 'trailer' | 'images'>('info');
+    const [activeTab, setActiveTab] = useState<TabKey>('info');
     const baseClass = 'text-[14px] flex items-start pb-3 cursor-pointer min-h-[30px] justify-center';
     const activeClass = 'text-[#b9e850] border-b-[4px] border-[#b9e850]';
+    const tabRefs: Record<TabKey, React.RefObject<HTMLDivElement | null>> = {
+        info: useRef(null),
+        character: useRef(null),
+        trailer: useRef(null),
+        images: useRef(null),
+    };
+
+    const [tabHeight, setTabHeight] = useState(0);
+
+    // useEffect(() => {
+    //     const ref = tabRefs[activeTab].current;
+    //     if (!ref) return;
+
+    //     requestAnimationFrame(() => {
+    //         const height = ref.offsetHeight;
+    //         console.log('height:', height);
+    //         setTabHeight(height);
+    //     });
+    // }, [activeTab]);
+
     return (
         <div className="container bg-[#0c1012] py-2 px-4">
             <div className="grid grid-cols-10 gap-4 pt-4">
                 <div className="col-span-10 lg:col-span-7 relative">
-                    <div className={`bg-[url('/banner.png')] p-5 relative bg-cover`}>
+                    <div className={`bg-[url('/banner.png')] p-5 relative bg-cover relative`}>
                         <div className='absolute bg-black/80 top-0 left-0 w-full h-full z-3'></div>
                         <div className='flex md:flex-row flex-col items-center md:items-start'>
                             <Link href="/phim/test" className="relative group !min-w-[180px] w-fit h-fit block overflow-hidden rounded-[3px] z-4 md:order-1 order-2">
-                                <Image src={movie_img} alt="a" className="rounded-[3px]" width={180} />
+                                <Image src={movie_img} alt="a" className="rounded-[3px]" />
                                 <div className="flex items-center justify-center absolute inset-0 group-hover:bg-black/30 transition-all opacity-100 duration-300 z-1">
                                     <div className="w-[50px] h-[50px] rounded-full bg-black/50 border-[2px] border-black flex items-center justify-center scale-100 group-hover:scale-100 transition-all duration-300">
                                         <PlayIcon size={14} color="white" />
@@ -54,7 +76,7 @@ export default function DetailMovie() {
                                 </div>
                             </div>
                         </div>
-                        <div className='text-white flex mt-4'>
+                        <div className='text-white flex'>
                             <div className='z-5 border-t border-white/60 w-full pt-4 ps-2 flex sm:flex-row flex-col'>
                                 <div className='flex'>
                                     <div className='w-[50px] h-[50px] border-2 border-[#b9e850] z-5 rounded-full text-[12px] text-white flex items-center justify-center font-bold' >
@@ -93,6 +115,13 @@ export default function DetailMovie() {
                                     </span>
                                 </div>
                             </div>
+                        </div>
+                        <div className='z-5 flex mt-3 gap-x-3 text-[14px] overflow-x-scroll w-full whitespace-nowrap py-4 bottom-scrollbar relative'>
+                            <Link href={`#`} className='border border-[#ccc] px-3 py-1 bg-[#7d9d14] rounded-[3px] flex items-center justify-center z-4'>Phần 1</Link>
+                            <Link href={`#`} className='border border-[#ccc] px-3 py-1 bg-[#1a1c1d] rounded-[3px] flex items-center justify-center z-4'>Phần 1 Part 2</Link>
+                            <Link href={`#`} className='border border-[#ccc] px-3 py-1 bg-[#1a1c1d] rounded-[3px] flex items-center justify-center z-4'>Phần Movie</Link>
+                            <Link href={`#`} className='border border-[#ccc] px-3 py-1 bg-[#1a1c1d] rounded-[3px] flex items-center justify-center z-4'>Phần 2</Link>
+                            <Link href={`#`} className='border border-[#ccc] px-3 py-1 bg-[#1a1c1d] rounded-[3px] flex items-center justify-center z-4'>Phần 3</Link>
                         </div>
                     </div>
                     <div className="mt-4 flex items-start gap-x-10 transition-all duration-200">
@@ -141,8 +170,8 @@ export default function DetailMovie() {
                             </div>
                         </div>
                     </div>
-                    <div className='pb-3 bg-[#171f22]'>
-                        <div className={`w-full grid grid-cols-2 gap-x-3 text-[12px] p-4 transform ${activeTab === 'info' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
+                    <div className='pb-3 bg-[#171f22] relative overflow-y-auto thin-scrollbar'>
+                        <div className={`w-full absolute top-0 left-0 grid grid-cols-2 gap-x-3 text-[12px] p-4 transform ${activeTab === 'info' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
                             <ul className='col-span-1 !list-disc ms-4'>
                                 <li>
                                     <div className='flex items-center'>
@@ -175,6 +204,21 @@ export default function DetailMovie() {
                                 <li className='mt-3 font-bold'>Seasin: <Link href={`#`} className='text-[#b5e745] font-light'>Mùa hạ - 2025</Link></li>
                             </ul>
                         </div>
+                        <div className={`w-full absolute top-0 left-0 overflow-y-scroll grid grid-cols-6 gap-3 gap-y-5 pt-8 text-[12px] thin-scrollbar p-4 transform ${activeTab === 'character' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
+                            {Array.from({ length: 20 }).map((_, index) => (
+                                <Link href={`#`} className='flex flex-col items-center justify-center md:col-span-1 col-span-2' key={index}>
+                                    <Image src={character} alt='char' width={80} />
+                                    <span>Monica</span>
+                                </Link>
+                            ))}
+                        </div>
+                        <div className={`w-full absolute top-0 left-0 h-full pt-8 text-[12px] p-4 transform ${activeTab === 'trailer' ? "scale-100 opacity-100 transition duration-100 pointer-events-auto" : "scale-0 opacity-0 pointer-events-none"}`}>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0OBF29HoV4A?si=CSvTUopIPtOTAp7y" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                        </div>
+                        <div className={`w-full z-0 pt-8 text-[12px] p-4 transform ${activeTab === 'images' ? "scale-100 opacity-100 transition duration-100" : "scale-0 opacity-0"}`}>
+                            <Image src={banner} alt='banner' width={1000} className='aspect-16/9' />
+                        </div>
+
                     </div>
                     <div className="mt-4 bg-[#131719] p-[10px]">
                         <div className="widg relative pe-4 mb-5 text-[13px] text-white">
