@@ -3,7 +3,6 @@ import type {
     Metadata,
     // ResolvingMetadata
 } from 'next'
-import DetailMovie from '@/app/phim/[slug]/detail-movie'
 import WatchMovie from '@/app/phim/[slug]/[epsion]/watch-movie'
 
 type Props = {

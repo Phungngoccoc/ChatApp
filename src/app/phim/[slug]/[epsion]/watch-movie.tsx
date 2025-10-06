@@ -1,6 +1,6 @@
 'use client'
 import RightBar from '@/components/right-bar'
-import React, { useState } from 'react'
+import React from 'react'
 import movie_img from "../../../../../public/movie_2.jpg"
 import Link from 'next/link'
 import Image from 'next/image'
@@ -30,21 +30,21 @@ export default function WatchMovie() {
                         <iframe width="100%" height="100%" className='aspect-16/9' src="https://www.youtube.com/embed/0OBF29HoV4A?si=CSvTUopIPtOTAp7y" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
                     </div>
                     <div className='col-span-full text-[14px] flex items-center flex-wrap justify-center mb-4'>
-                        <div className='flex items-center px-3 py-2 mt-2'><NextIcon fill="#ccc" className='opacity-70 me-2' width={14} height={14} /> Tập tiếp</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><CommentIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Bình luận</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><BulbIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Tắt đèn</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><BookmarkIcon fill="#ccc" className='opacity-70 me-2' width={16} height={16} /> Theo dõi</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><FrameIcon rotate={90} fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Phóng to</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><ErrorIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Báo lỗi</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><CameraFrontIcon stroke='#ccc' className='opacity-70 me-2' width={23} height={23} /> Chụp ảnh</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><DownloadIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Tải về</div>
-                        <div className='flex items-center px-3 py-2 mt-2'><HistoryIcon stroke="#ccc" className='opacity-70 me-2' width={20} height={20} /> Lịch sử xem</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><NextIcon fill="#ccc" className='opacity-70 me-2' width={14} height={14} /> Tập tiếp</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><CommentIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Bình luận</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><BulbIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Tắt đèn</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><BookmarkIcon fill="#ccc" className='opacity-70 me-2' width={16} height={16} /> Theo dõi</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><FrameIcon rotate={90} fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Phóng to</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><ErrorIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Báo lỗi</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><CameraFrontIcon stroke='#ccc' className='opacity-70 me-2' width={23} height={23} /> Chụp ảnh</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><DownloadIcon fill="#ccc" className='opacity-70 me-2' width={20} height={20} /> Tải về</div>
+                        <div className='flex items-center px-3 py-2 mt-2 cursor-pointer'><HistoryIcon stroke="#ccc" className='opacity-70 me-2' width={20} height={20} /> Lịch sử xem</div>
                     </div>
                     <div className='col-span-full bg-[#131719] mb-4 text-white p-4'>
-                        <div className='flex text-[12px]'><ServerIcon fill="#ccc" className='opacity-70 me-2' width={15} height={15} />ANIMEVSUB</div>
+                        <div className='flex text-[12px]'><ServerIcon fill="#ccc" className='opacity-100 me-2' width={15} height={15} />ANIMEVSUB</div>
                         <div className='p-4 text-white flex flex-wrap gap-3'>
                             {Array.from({ length: 13 }).map((_, index) => (
-                                <div key={index} className={`w-[40px] h-[40px] flex items-center justify-center border border-[#2c3032] rounded-[4px] ${index === 0 ? 'bg-[#e50914]' : 'bg-[#2c3032]'}`}><Link href={`/phim/test/tap-01`} >{index > 8 ? '' : '0'}{index + 1}</Link></div>
+                                <div key={index} className={`w-[48px] h-[40px] cursor-pointer flex items-center justify-center rounded-[4px] ${index === 0 ? 'bg-[#e50914]' : 'bg-[#2c3032]'}`}><Link href={`/phim/test/tap-01`} >{index > 8 ? '' : '0'}{index + 1}</Link></div>
                             ))}
                         </div>
                     </div>

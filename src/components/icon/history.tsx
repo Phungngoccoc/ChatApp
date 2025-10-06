@@ -6,7 +6,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     height?: number | string;
 }
 
-const HistoryIcon: React.FC<IconProps> = ({
+export const HistoryIcon: React.FC<IconProps> = ({
     stroke = '#000000',
     width = 64,
     height = 64,
