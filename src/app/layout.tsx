@@ -30,7 +30,7 @@ export default function RootLayout({
 
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow p-0">
+          <main className="flex-grow p-0 text-white">
             <div className="flex justify-center h-fit pt-4 px-1">
               <div className="container lg:!px-0 xl:!px-25 2xl:!px-50">{children}
               </div>

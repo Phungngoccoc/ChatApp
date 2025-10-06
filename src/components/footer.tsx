@@ -9,7 +9,7 @@ import YouTubeIcon from '@/components/icon/youtobe'
 import ArrowUpIcon from '@/components/icon/arrow-up'
 export default function Footer() {
     return (
-        <div className="flex justify-center h-fit pt-4 px-1 mb-5">
+        <div className="flex justify-center h-fit pt-4 px-1 mb-5 text-white">
             <div className="container lg:!px-0 xl:!px-25 2xl:!px-50">
                 <div className="container bg-[#0c1012] py-2 px-4 lg:flex-row flex flex-col items-center justify-between">
                     <Image src={logo} alt="logo" />

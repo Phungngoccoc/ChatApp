@@ -155,19 +155,19 @@ export default function Home() {
             </CarouselContent>
           </Carousel>
           <div className="mt-4">
-            <div className="flex text-white items-center justify-between pe-5 text-[14px]">
-              <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">MỚI CẬP NHẬT <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
-              <Link href={`#`} className="text-[#f44336]">Tất cả</Link>
-              <Link href={`#`}>Mùa thu - 2025</Link>
-              <Link href={`#`}>Anime bộ</Link>
-              <Link href={`#`}>Anime lẻ</Link>
-              <Link href={`#`}>HH Trung Quốc</Link>
+            <div className="flex text-white items-center pe-5 text-[14px] flex-wrap">
+              <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center me-4">MỚI CẬP NHẬT <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
+              <div className="p-3"><Link href={`#`} className="text-[#f44336]">Tất cả</Link></div>
+              <div className="p-3"><Link href={`#`}>Mùa thu - 2025</Link></div>
+              <div className="p-3"><Link href={`#`}>Anime bộ</Link></div>
+              <div className="p-3"><Link href={`#`}>Anime lẻ</Link></div>
+              <div className="p-3"><Link href={`#`}>HH Trung Quốc</Link></div>
             </div>
-            <div className="grid grid-cols-5 gap-4 mt-4 ">
+            <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 mt-4 ">
               {Array.from({ length: 10 }).map((_, index) => (
-                <div className="group" key={index}>
-                  <Link href="#" className="relative z-0 group col-span-1" >
-                    <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+                <div className="group col-span-1" key={index} >
+                  <Link href="/phim/test" className="relative z-0 group" >
+                    <Image src={img} alt="a" width={300} className="rounded-[3px]" />
 
                     <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
                       <StarIcon size={11} color="#f5ed4a" />
@@ -190,18 +190,18 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+              <Link href={`#`} className="col-span-full bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
             </div>
           </div>
           <div className="mt-4">
             <div className="flex text-white items-center justify-between pe-5 text-[14px]">
               <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">SẮP CHIẾU <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
             </div>
-            <div className="grid grid-cols-5 gap-4 mt-4 ">
+            <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 mt-4 ">
               {Array.from({ length: 10 }).map((_, index) => (
-                <div className="group" key={index}>
-                  <Link href="#" className="relative z-0 group col-span-1">
-                    <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+                <div className="group col-span-1" key={index}>
+                  <Link href="/phim/test" className="relative z-0 group">
+                    <Image src={img} alt="a" className="rounded-[3px]" />
 
                     <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
                       <StarIcon size={11} color="#f5ed4a" />
@@ -227,22 +227,22 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+              <Link href={`#`} className="col-span-full bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
             </div>
           </div>
           <div className="mt-4">
-            <div className="flex text-white items-center gap-x-5 pe-5 text-[14px]">
-              <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center">ĐỀ CỬ <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
-              <Link href={`#`} className="text-[#f44336]">Xem nhiều hôm nay</Link>
-              <Link href={`#`}>Xem nhiều trong mùa</Link>
-              <Link href={`#`}>Yêu thích</Link>
-              <Link href={`#`}>Tháng</Link>
+            <div className="flex text-white items-center pe-5 text-[14px] flex-wrap">
+              <h1 className="text-[18px] bg-[#811334] rounded-[5px] p-2 flex items-center me-4">ĐỀ CỬ <Arrow width={24} height={24} color="#ffffff" rotate={90} className="ms-1" /></h1>
+              <div className="p-3"><Link href={`#`} className="text-[#f44336]">Xem nhiều hôm nay</Link></div>
+              <div className="p-3"><Link href={`#`}>Xem nhiều trong mùa</Link></div>
+              <div className="p-3"><Link href={`#`}>Yêu thích</Link></div>
+              <div className="p-3"><Link href={`#`}>Tháng</Link></div>
             </div>
-            <div className="grid grid-cols-5 gap-4 mt-4 ">
+            <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 mt-4 ">
               {Array.from({ length: 10 }).map((_, index) => (
-                <div className="group" key={index}>
-                  <Link href="#" className="relative z-0 group col-span-1" >
-                    <Image src={img} alt="a" width={300} height={200} className="rounded-[3px]" />
+                <div className="group col-span-1" key={index} >
+                  <Link href="/phim/test" className="relative z-0 group" >
+                    <Image src={img} alt="a" width={300} className="rounded-[3px]" />
 
                     <div className="flex items-center absolute z-10 top-0 left-0 ms-2 mt-1 bg-black/65 rounded-full px-3 py-2 justify-center mt-4">
                       <StarIcon size={11} color="#f5ed4a" />
@@ -265,7 +265,7 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              <Link href={`#`} className="col-span-5 bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
+              <Link href={`#`} className="col-span-full bg-[#12181a] py-3 text-[18px] text-center mt-2 hover:text-[#ccc]">XEM THÊM...</Link>
             </div>
           </div>
         </div>

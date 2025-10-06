@@ -13,11 +13,11 @@ export default function RightBar() {
     return (
         <div className="lg:col-span-3 col-span-10">
             <div className="widget bg-[#131719] p-[10px]">
-                <div className="widg relative pe-4 mb-5">
+                <div className="widg relative pe-4 mb-5 text-white">
                     Hôm nay xem gì
                 </div>
                 <div>
-                    <p className="text-[13px] opacity-60 mt-8">
+                    <p className="text-[13px] opacity-60 mt-8 text-white">
                         Nếu bạn buồn phiền không biết xem gì hôm nay. Hãy để chúng tôi chọn cho bạn
                     </p>
                     <Button className="flex items-center px-3 py-3 mt-4 text-sm bg-[#921616] hover:bg-[#921616] rounded-[5px]">
@@ -29,7 +29,7 @@ export default function RightBar() {
                 <Image src={widge_gif} alt="gif" unoptimized />
             </div>
             <div className="mt-4 bg-[#131719] p-[10px]">
-                <div className="widg relative pe-4 mb-5 text-[13px]">
+                <div className="widg relative pe-4 mb-5 text-[13px] text-white">
                     ANIME MỚI CẬP NHẬT
                 </div>
                 <div>
@@ -50,7 +50,7 @@ export default function RightBar() {
                     </ul>
                 </div>
             </div>
-            <div className="mt-4 bg-[#131719] p-[10px]">
+            <div className="mt-4 bg-[#131719] p-[10px] text-white">
                 <div className="widg relative pe-4 mb-5 text-[14px] flex items-center justify-between py-4">
                     <span>HOT TUẦN</span>
                     <Link href={`#`} className="text-[#F44336]">TV/Series</Link>
