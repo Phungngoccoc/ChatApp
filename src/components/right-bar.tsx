@@ -26,7 +26,7 @@ export default function RightBar() {
                 </div>
             </div>
             <div className="mt-4 flex items-center justify-center">
-                <Image src={widge_gif} alt="gif" />
+                <Image src={widge_gif} alt="gif" unoptimized />
             </div>
             <div className="mt-4 bg-[#131719] p-[10px]">
                 <div className="widg relative pe-4 mb-5 text-[13px]">

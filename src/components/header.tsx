@@ -12,8 +12,10 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import logo from "../../public/logo.png"
 
 export default function Header() {
     const [isOpenMenu, setIsOpenMenu] = useState(false)
@@ -35,7 +37,7 @@ export default function Header() {
             <div className='w-full flex justify-center'>
                 <div className='px-1 flex items-center h-[66px] lg:justify-center justify-between w-full'>
                     <figure className="Logo">
-                        <a href="/" title="Xem anime Vietsub" rel="home"><img src="https://cdn.animevietsub.show/data/logo/logoz.png" alt="Logo" /></a>
+                        <Link href="/" title="Xem anime Vietsub" rel="home"><Image src={logo} alt="Logo" /></Link>
                     </figure>
                     <div className="items-center justify-center gap-x-[10px] flex pe-2">
                         <NavigationMenu viewport={false} className='lg:block hidden'>

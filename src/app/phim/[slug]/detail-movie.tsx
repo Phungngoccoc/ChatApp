@@ -1,6 +1,6 @@
 'use client'
 import RightBar from '@/components/right-bar'
-import React, { RefObject, useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import movie_img from "../../../../public/movie_2.jpg"
 import img from "../../../../public/movie.jpg"
 import banner from "../../../../public/banner.png"
@@ -25,25 +25,6 @@ export default function DetailMovie() {
     const [activeTab, setActiveTab] = useState<TabKey>('info');
     const baseClass = 'text-[14px] flex items-start pb-3 cursor-pointer min-h-[30px] justify-center';
     const activeClass = 'text-[#b9e850] border-b-[4px] border-[#b9e850]';
-    const tabRefs: Record<TabKey, React.RefObject<HTMLDivElement | null>> = {
-        info: useRef(null),
-        character: useRef(null),
-        trailer: useRef(null),
-        images: useRef(null),
-    };
-
-    const [tabHeight, setTabHeight] = useState(0);
-
-    // useEffect(() => {
-    //     const ref = tabRefs[activeTab].current;
-    //     if (!ref) return;
-
-    //     requestAnimationFrame(() => {
-    //         const height = ref.offsetHeight;
-    //         console.log('height:', height);
-    //         setTabHeight(height);
-    //     });
-    // }, [activeTab]);
 
     return (
         <div className="container bg-[#0c1012] py-2 px-4">
@@ -65,14 +46,14 @@ export default function DetailMovie() {
                             </Link>
                             <div className='z-4 px-4 pt-2 !w-full overflow-hidden  md:order-2 order-1 md:mb-0 mb-3'>
                                 <h1 className='text-[#b5e745] text-[30px] font-light overflow-hidden whitespace-nowrap text-ellipsis'>Bí Mật Của Phù Thủy Tĩnh Lặng</h1>
-                                <h2 className='text-[16px] overflow-hidden whitespace-nowrap text-ellipsis'>Silent Witch: Chinmoku no Majo no Kakushigoto, Secrets of the Silent Witch</h2>
+                                <h2 className='text-[16px] overflow-hidden whitespace-nowrap text-ellipsis'>Silent Witch: Chinmoku no Majo no Kakushigoto Secrets of the Silent Witch</h2>
                                 <div className='!max-h-[150px] overflow-y-scroll mt-2 text-[13px] opacity-70 text-justify pe-2 m-0 custom-scrollbar md:block hidden'>
-                                    Pháp sư thiên tài Monica Everett là một cô gái cực kỳ nhút nhát và ngại giao tiếp trước đám đông. Sau bao nhiêu nỗ lực, Monica cuối cùng cũng đã học được và thông thạo thuật vô niệm, khả năng sử dụng phép thuật mà không cần niệm chú. Ở tuổi 15, cô đã được chọn làm một trong Bảy Hiền Nhân, bảy pháp sư mạnh mẽ nhất vương quốc, với danh hiệu Phù Thủy Tĩnh Lặng. Và rồi, Monica bắt đầu một cuộc sống ẩn dật yên bình trong rừng. Tuy vậy, hai năm sau, vào một ngày nọ, Monica nhận được một yêu cầu. Đó chính là bí mật bảo vệ Nhị Hoàng Tử đang theo học trong Học Viện. Để hoàn thành yêu cầu đó, Monica buộc phải thâm nhập vào một học viện xa hoa chỉ dành cho con em quý tộc theo học. "Không muốn đâu....Sợ lắm.....Ưư...cái dạ dày của tôi..." Tiếng khóc thút thít của cô gái rồi cũng bị những cơn gió cuốn bay đi thật xa.
+                                    Pháp sư thiên tài Monica Everett là một cô gái cực kỳ nhút nhát và ngại giao tiếp trước đám đông. Sau bao nhiêu nỗ lực Monica cuối cùng cũng đã học được và thông thạo thuật vô niệm khả năng sử dụng phép thuật mà không cần niệm chú. Ở tuổi 15 cô đã được chọn làm một trong Bảy Hiền Nhân bảy pháp sư mạnh mẽ nhất vương quốc với danh hiệu Phù Thủy Tĩnh Lặng. Và rồi Monica bắt đầu một cuộc sống ẩn dật yên bình trong rừng. Tuy vậy hai năm sau vào một ngày nọ Monica nhận được một yêu cầu. Đó chính là bí mật bảo vệ Nhị Hoàng Tử đang theo học trong Học Viện. Để hoàn thành yêu cầu đó Monica buộc phải thâm nhập vào một học viện xa hoa chỉ dành cho con em quý tộc theo học. Không muốn đâu....Sợ lắm.....Ưư...cái dạ dày của tôi... Tiếng khóc thút thít của cô gái rồi cũng bị những cơn gió cuốn bay đi thật xa.
                                 </div>
                             </div>
                             <div className='order-3 md:hidden z-4'>
                                 <div className='!max-h-[150px] overflow-y-scroll mt-2 text-[13px] opacity-70 z-4 text-justify pe-2 m-0 custom-scrollbar'>
-                                    Pháp sư thiên tài Monica Everett là một cô gái cực kỳ nhút nhát và ngại giao tiếp trước đám đông. Sau bao nhiêu nỗ lực, Monica cuối cùng cũng đã học được và thông thạo thuật vô niệm, khả năng sử dụng phép thuật mà không cần niệm chú. Ở tuổi 15, cô đã được chọn làm một trong Bảy Hiền Nhân, bảy pháp sư mạnh mẽ nhất vương quốc, với danh hiệu Phù Thủy Tĩnh Lặng. Và rồi, Monica bắt đầu một cuộc sống ẩn dật yên bình trong rừng. Tuy vậy, hai năm sau, vào một ngày nọ, Monica nhận được một yêu cầu. Đó chính là bí mật bảo vệ Nhị Hoàng Tử đang theo học trong Học Viện. Để hoàn thành yêu cầu đó, Monica buộc phải thâm nhập vào một học viện xa hoa chỉ dành cho con em quý tộc theo học. "Không muốn đâu....Sợ lắm.....Ưư...cái dạ dày của tôi..." Tiếng khóc thút thít của cô gái rồi cũng bị những cơn gió cuốn bay đi thật xa.
+                                    Pháp sư thiên tài Monica Everett là một cô gái cực kỳ nhút nhát và ngại giao tiếp trước đám đông. Sau bao nhiêu nỗ lực Monica cuối cùng cũng đã học được và thông thạo thuật vô niệm khả năng sử dụng phép thuật mà không cần niệm chú. Ở tuổi 15 cô đã được chọn làm một trong Bảy Hiền Nhân bảy pháp sư mạnh mẽ nhất vương quốc với danh hiệu Phù Thủy Tĩnh Lặng. Và rồi Monica bắt đầu một cuộc sống ẩn dật yên bình trong rừng. Tuy vậy hai năm sau vào một ngày nọ Monica nhận được một yêu cầu. Đó chính là bí mật bảo vệ Nhị Hoàng Tử đang theo học trong Học Viện. Để hoàn thành yêu cầu đó Monica buộc phải thâm nhập vào một học viện xa hoa chỉ dành cho con em quý tộc theo học. Không muốn đâu....Sợ lắm.....Ưư...cái dạ dày của tôi... Tiếng khóc thút thít của cô gái rồi cũng bị những cơn gió cuốn bay đi thật xa.
                                 </div>
                             </div>
                         </div>
@@ -182,7 +163,7 @@ export default function DetailMovie() {
                                     </div>
                                 </li>
                                 <li className='mt-3 font-bold'>Trạng thái: <span className='opacity-70 font-light'>Full</span></li>
-                                <li className='mt-3 font-bold'>Thể loại: <Link href={`#`} className='text-[#b5e745] font-light'>Fantasy</Link>, <Link href={`#`} className='text-[#b5e745] font-light'>Magic</Link></li>
+                                <li className='mt-3 font-bold'>Thể loại: <Link href={`#`} className='text-[#b5e745] font-light'>Fantasy</Link> <Link href={`#`} className='text-[#b5e745] font-light'>Magic</Link></li>
                                 <li className='mt-3 font-bold'>Đạo diễn: <span className='opacity-70 font-light'>Kanasaki Takaomi</span></li>
                                 <li className='mt-3 font-bold'>Quốc gia: <Link href={`#`} className='text-[#b5e745] font-light'>Nhật Bản</Link></li>
                                 <li className='mt-3 font-bold'>Số người theo dõi: <span className='opacity-70 font-light'>3,607</span></li>

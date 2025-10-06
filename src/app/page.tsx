@@ -112,7 +112,7 @@ export default function Home() {
                         </span>
                       </div>
                       <p className="line-clamp-2 text-sm text-white opacity-80 mt-3 pe-3">
-                        Vào thời Edo, có một vu nữ tên là "Itsukihime" ở ngôi làng miền núi Kadono. Jinta, một chàng trai trẻ đóng vai trò là một vu nữ tên là "Itsukihime" ở ngôi làng miền núi Kadono
+                        Vào thời Edo có một vu nữ tên là Itsukihime ở ngôi làng miền núi Kadono. Jinta là một chàng trai trẻ đóng vai trò là một vu nữ tên là Itsukihime ở ngôi làng miền núi Kadono
                       </p>
                       <div className="mt-4">
                         <span className="flex text-[12px] items-center">

@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 
-const privatePath = [''];
-const authPath = [''];
+// const privatePath = [''];
+// const authPath = [''];
 
 
 export async function middleware(request: NextRequest) {

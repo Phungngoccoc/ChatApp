@@ -10,7 +10,6 @@ type IconProps = {
 const FacebookIcon: React.FC<IconProps> = ({
     width = 24,
     height = 24,
-    color = "#000000",
     className = "",
 }) => {
     return (

@@ -1,5 +1,8 @@
 import React from 'react'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type {
+    Metadata,
+    // ResolvingMetadata
+} from 'next'
 import DetailMovie from '@/app/phim/[slug]/detail-movie'
 
 type Props = {
@@ -8,10 +11,13 @@ type Props = {
 }
 
 export async function generateMetadata(
-    { params, searchParams }: Props,
-    parent: ResolvingMetadata
+    {
+        // params,
+        // searchParams
+    }: Props,
+    // parent: ResolvingMetadata
 ): Promise<Metadata> {
-    const { id } = await params
+    // const { id } = await params
 
     // const product = await fetch(`https://.../${id}`).then((res) => res.json())
 
