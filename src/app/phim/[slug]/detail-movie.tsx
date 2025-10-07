@@ -20,7 +20,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import StarIcon from '@/components/icon/star'
 import StarIcons from '@/components/icon/star-full'
-type TabKey = 'info' | 'character' | 'trailer' | 'images';
+export type TabKey = 'info' | 'character' | 'trailer' | 'images';
 export default function DetailMovie() {
     const [activeTab, setActiveTab] = useState<TabKey>('info');
     const baseClass = 'text-[14px] flex items-start pb-3 cursor-pointer min-h-[30px] justify-center';

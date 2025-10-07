@@ -19,7 +19,7 @@ import RightBar from "@/components/right-bar"
 import PlayIcon from "@/components/icon/play"
 import Image from "next/image"
 import Link from "next/link"
-import img from "../../../../public/movie.jpg"
+import img from "../../../../../public/movie.jpg"
 import StarIcon from "@/components/icon/star"
 import { SortIcon } from "@/components/icon/sort"
 import { HistoryIcon } from "@/components/icon/history"
@@ -71,9 +71,9 @@ const years = [
   { id: "2013", label: "2013" },
   { id: "older", label: "Cũ hơn" },
 ];
-export default function Home() {
+export default function FilterPage() {
   const [currentPage, setCurrentPage] = useState(5)
-  const [isOpenFilter, setIsOpenFilter] = useState(true)
+  const [isOpenFilter, setIsOpenFilter] = useState(false)
   const totalPages = 10
 
   const getPageNumbers = () => {
