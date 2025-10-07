@@ -54,7 +54,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/tv-series"
+                                                    href="/loc/dang-phim/tv-series"
                                                 >
                                                     TV/Series
                                                 </Link>
@@ -62,7 +62,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/anime-le"
+                                                    href="/loc/dang-phim/anime-le"
                                                 >
                                                     Movie/OVA
                                                 </Link>
@@ -70,7 +70,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/hoat-hinh-trung-quoc"
+                                                    href="/loc/dang-phim/hoat-hinh-trung-quoc"
                                                 >
                                                     HH Trung Quốc
                                                 </Link>
@@ -78,7 +78,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/anime-sap-chieu"
+                                                    href="/loc/dang-phim/anime-sap-chieu"
                                                 >
                                                     Anime sắp chiếu
                                                 </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/anime-dang-chieu"
+                                                    href="/loc/dang-phim/anime-dang-chieu"
                                                 >
                                                     Anime đang chiếu
                                                 </Link>
@@ -94,7 +94,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="/dang-phim/anime-tron-bo"
+                                                    href="/loc/dang-phim/anime-tron-bo"
                                                 >
                                                     Anime trọn bộ
                                                 </Link>
@@ -109,7 +109,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/bang-xep-hang/theo-ngay"
                                                 >
                                                     Theo ngày
                                                 </Link>
@@ -117,7 +117,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/bang-xep-hang/yeu-thich"
                                                 >
                                                     Yêu thích
                                                 </Link>
@@ -125,7 +125,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/bang-xep-hang/theo-thang"
                                                 >
                                                     Theo tháng
                                                 </Link>
@@ -133,7 +133,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/bang-xep-hang/theo-mua"
                                                 >
                                                     Theo mùa
                                                 </Link>
@@ -141,17 +141,9 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/bang-xep-hang/theo-nam"
                                                 >
                                                     Theo năm
-                                                </Link>
-                                            </div>
-                                            <div className="col-span-1 px-2">
-                                                <Link
-                                                    className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
-                                                >
-                                                    Anime trọn bộ
                                                 </Link>
                                             </div>
                                         </div>
@@ -214,7 +206,7 @@ export default function Header() {
                                                 <div key={genre} className="col-span-1 px-2">
                                                     <Link
                                                         className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                        href="#"
+                                                        href="/loc/the-loai/hanh-dong"
                                                     >
                                                         {genre}
                                                     </Link>
@@ -252,7 +244,7 @@ export default function Header() {
                                                 <div key={season} className="col-span-1 px-2">
                                                     <Link
                                                         className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                        href="#"
+                                                        href="/loc/mua/mua-thu-2025"
                                                     >
                                                         {season}
                                                     </Link>
@@ -263,12 +255,12 @@ export default function Header() {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                                        <Link href="/docs">THƯ VIỆN</Link>
+                                        <Link href="/thu-vien">THƯ VIỆN</Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                                        <Link href="/docs">LỊCH CHIẾU</Link>
+                                        <Link href="/lich-chieu">LỊCH CHIẾU</Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                             </NavigationMenuList>
