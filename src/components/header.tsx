@@ -44,7 +44,7 @@ export default function Header() {
                             <NavigationMenuList>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                                        <Link href="/docs">TRANG CHỦ</Link>
+                                        <Link href="/">TRANG CHỦ</Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
@@ -54,7 +54,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/tv-series"
                                                 >
                                                     TV/Series
                                                 </Link>
@@ -62,7 +62,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/anime-le"
                                                 >
                                                     Movie/OVA
                                                 </Link>
@@ -70,7 +70,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/hoat-hinh-trung-quoc"
                                                 >
                                                     HH Trung Quốc
                                                 </Link>
@@ -78,7 +78,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/anime-sap-chieu"
                                                 >
                                                     Anime sắp chiếu
                                                 </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/anime-dang-chieu"
                                                 >
                                                     Anime đang chiếu
                                                 </Link>
@@ -94,7 +94,7 @@ export default function Header() {
                                             <div className="col-span-1 px-2">
                                                 <Link
                                                     className="block overflow-hidden text-ellipsis whitespace-nowrap hover:opacity-60"
-                                                    href="#"
+                                                    href="/dang-phim/anime-tron-bo"
                                                 >
                                                     Anime trọn bộ
                                                 </Link>
