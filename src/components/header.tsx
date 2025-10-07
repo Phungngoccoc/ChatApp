@@ -602,7 +602,7 @@ export default function Header() {
                     <div className="flow-root text-white">
                         <ul>
                             <li className='text-[13px]'>
-                                <Link href={`#`}>TRANG CHỦ</Link>
+                                <Link href={`/`}>TRANG CHỦ</Link>
                             </li>
                         </ul>
                         <ul>
@@ -631,12 +631,12 @@ export default function Header() {
                                 </Button>
                                 <ul className={`sub-menu ${openSubMenu === 'sub_menu_1' ? 'show' : ''}`}>
                                     <div className='grid grid-cols-2 p-0 text-[11px] bg-black/20'>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>TV/Series</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Movie/OVA</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>HH Trung Quốc</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Anime sắp chiếu</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Anime đang chiếu</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Anime trọn bộ</Link>
+                                        <Link href={`/loc/dang-phim/tv-series`} className='col-span-1 !ps-4'>TV/Series</Link>
+                                        <Link href={`/loc/dang-phim/movie-ova`} className='col-span-1 !ps-4'>Movie/OVA</Link>
+                                        <Link href={`/loc/dang-phim/hoat-hinh-trung-quoc`} className='col-span-1 !ps-4'>HH Trung Quốc</Link>
+                                        <Link href={`/loc/dang-phim/anime-sap-chieu`} className='col-span-1 !ps-4'>Anime sắp chiếu</Link>
+                                        <Link href={`/loc/dang-phim/anime-dang-chieu`} className='col-span-1 !ps-4'>Anime đang chiếu</Link>
+                                        <Link href={`/loc/dang-phim/anime-tron-bo`} className='col-span-1 !ps-4'>Anime trọn bộ</Link>
                                     </div>
                                 </ul>
                             </li>
@@ -667,11 +667,11 @@ export default function Header() {
                                 </Button>
                                 <ul className={`sub-menu ${openSubMenu === 'sub_menu_2' ? 'show' : ''}`}>
                                     <div className='grid grid-cols-2 p-0 text-[11px] bg-black/20'>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Theo ngày</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Yêu thích</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Theo tháng</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Theo mùa</Link>
-                                        <Link href={`#`} className='col-span-1 !ps-4'>Theo năm</Link>
+                                        <Link href={`/loc/bang-xep-hang/theo-ngay`} className='col-span-1 !ps-4'>Theo ngày</Link>
+                                        <Link href={`/loc/bang-xep-hang/yeu-thich`} className='col-span-1 !ps-4'>Yêu thích</Link>
+                                        <Link href={`/loc/bang-xep-hang/theo-thang`} className='col-span-1 !ps-4'>Theo tháng</Link>
+                                        <Link href={`/loc/bang-xep-hang/theo-mua`} className='col-span-1 !ps-4'>Theo mùa</Link>
+                                        <Link href={`/loc/bang-xep-hang/theo-nam`} className='col-span-1 !ps-4'>Theo năm</Link>
                                     </div>
                                 </ul>
                             </li>
@@ -752,7 +752,7 @@ export default function Header() {
                                             "School Romance",
                                             "Historical Romance",
                                         ].map((genre) => (
-                                            <Link key={genre} href={`#`} className='col-span-1 !ps-4'>{genre}</Link>
+                                            <Link key={genre} href={`/loc/the-loai/fantasy`} className='col-span-1 !ps-4'>{genre}</Link>
                                         ))}
                                     </div>
                                 </ul>
@@ -763,7 +763,7 @@ export default function Header() {
                                 <Button
                                     onClick={() => toggleSubMenu('sub_menu_4')}
                                     className={`dropdown-btn p-0 m-0 ${openSubMenu === 'sub_menu_4' ? 'rotate' : ''}`}>
-                                    <span>TOP ANIME</span>
+                                    <span>SEASON</span>
                                     <svg
                                         width={`24px`}
                                         height={`24px`}
@@ -806,7 +806,7 @@ export default function Header() {
                                             "Mùa Hè 2021",
                                             "Mùa Thu 2021",
                                         ].map((season) => (
-                                            <Link key={season} href={`#`} className='col-span-1 !ps-4'>{season}</Link>
+                                            <Link key={season} href={`/loc/mua/mua-thu-2025`} className='col-span-1 !ps-4'>{season}</Link>
                                         ))}
                                     </div>
                                 </ul>
@@ -815,12 +815,12 @@ export default function Header() {
                         </ul>
                         <ul>
                             <li className='text-[13px]'>
-                                <Link href={`#`}>THƯ VIỆN</Link>
+                                <Link href={`/thu-vien`}>THƯ VIỆN</Link>
                             </li>
                         </ul>
                         <ul>
                             <li className='text-[13px]'>
-                                <Link href={`#`}>LỊCH CHIẾU</Link>
+                                <Link href={`/lich-chieu`}>LỊCH CHIẾU</Link>
                             </li>
                         </ul>
                     </div>
