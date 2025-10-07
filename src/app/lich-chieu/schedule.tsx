@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import img from '../../../public/movie_2.jpg'
 import StarIcon from '@/components/icon/star'
 import PlayIcon from '@/components/icon/play'
